@@ -1,0 +1,11 @@
+/* Essas classes são usados no exempol do NgClass - app.component.html
+
+  As classes que estiverm aqui serão aplicadas apenas no app.component.html
+*/
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}

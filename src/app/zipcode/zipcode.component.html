@@ -1,0 +1,61 @@
+<div class="po-row">
+  <po-input
+      class="po-md-3"
+      name="cep"
+      [(ngModel)]="cep"
+      p-label="CEP"
+      p-placeholder="Digite o CEP"
+      (p-change)="getCep()">
+  </po-input>
+</div>
+
+<div class="po-row">
+  <po-container class="po-md-6" *ngIf="!cepResponse.logradouro">
+    <po-info p-value="CEP não encontrado">
+    </po-info>
+  </po-container>
+
+  <po-container class="po-md-6" *ngIf="cepResponse.logradouro">
+    <po-info p-orientation="horizontal"
+            class="po-md-6"
+            p-label="Rua"
+            [p-value]="cepResponse.logradouro">
+    </po-info>
+
+    <po-info p-orientation="horizontal"
+            class="po-md-6"
+            p-label="Bairro"
+            [p-value]="cepResponse.bairro">
+    </po-info>
+
+    <po-info p-orientation="horizontal"
+            class="po-md-6"
+            p-label="Cidade"
+            [p-value]="cepResponse.localidade">
+    </po-info>
+
+    <po-info p-orientation="horizontal"
+            class="po-md-6"
+            p-label="Estado"
+            [p-value]="cepResponse.uf">
+    </po-info>
+  </po-container>
+</div>
+
+<div class="po-row">
+  <po-button class="po-md-4"
+      p-label="Novo CEP"
+      (p-click)="newZipCode()">
+  </po-button>
+
+  <po-button class="po-md-4"
+    p-label="Editar CEP"
+    (p-click)="editZipCode()">
+  </po-button>
+
+</div>
+<app-wellcome userName="Alexandre"
+              [lastDate]="lastDate"
+              (goToCep)="navigateToZipCode($event)">
+</app-wellcome>
+

@@ -1,0 +1,6 @@
+<!-- Envia os parâmetros para o componente FILHO -->
+<app-wellcome *ngFor="let user of users"
+              [userName]="user.name"
+              [lastDate]="user.lastDate"
+              (goToCep)="navigateToZipCode($event)">
+</app-wellcome>

@@ -1,0 +1,16 @@
+<po-widget class="po-md-6"
+           p-title="Bem-Vindo!!!"
+           (p-primary-action)="searchCep()"
+           p-primary-label="Buscar CEP">
+  <po-info
+      p-label="Seja bem-vindo usuário"
+      p-orientation="horizontal"
+      [p-value]="userName">
+  </po-info>
+
+  <po-info
+      p-label="Seu último acesso foi em"
+      p-orientation="horizontal"
+      [p-value]="lastDate | date : 'dd/MM/yyyy hh:mm:ss'">
+  </po-info>
+</po-widget>
